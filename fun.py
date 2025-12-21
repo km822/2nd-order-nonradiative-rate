@@ -5,9 +5,8 @@ Created on Wed Apr 19 13:31:13 2024
 
 @author: kenmiyazaki
 
-Rrepository of functions to
-- compute correlation functions
-- ... 
+Rrepository of functions
+
 """
 import numpy as np
 from scipy.linalg import inv 
