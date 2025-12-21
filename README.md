@@ -1,2 +1,9 @@
 # 2nd-order-nonradiative-rate
-This is a Python code that implements the nonradiative transition rate formulation based on the second-order perturbation theory.
+This is a Python code that implements the nonradiative transition rate formulation based on the second-order perturbation theory for molecular systems.
+In addition to the initial and final electronic states, the code can accept any number of intermediate electronic states regardless of their spins, provided that necessary nonadiabatic and spin-orbit couplings (NAC and SOC) are provided. Thanks to the second-order treatment, spin-vibronic (SV) effects arising from the conjunction of internal conversion and intersystem crossing are taken into account. Further, we include in the formulation the vibrational spin-orbit (VSO) effects, which account for the first-order dependence of SOCs on nuclear coordinates.
+
+The underlying formulation is known as thermal vibration correlation function (TVCF) formulation and derived analytically assuming harmonic nuclear modes. This implementation takes it further by analytically removing the inherent singularity issues associated with TVCFs, hence achieving stable and robust numerical implementation.
+
+The inputs to the code consist of the temperature, the equilibrium geometries of the initial and final electronic states, normal modes at the equilibrium geometries, the state energies of all electronic states (initial + final + intermediates), appropriate NACs and SOCs, and in case the inclusion of VSO effects is intended, the SOCs evaluated at geometries displaced forward and backward along the normal modes. The code can be RAM intensive since some of the TVCFs are rank-4 tensors dependent on time with each dimension containing as many degrees of freedom as the number of normal modes. It is possible to reduce the memory cost by cutting off couplings smaller than a chosen ratio to the largest coupling and not including SOC derivatives along some normal modes. The trade-off is accuracy so we advise user's to use their discretion.
+
+For more details, see our publication: ... coming soon.
