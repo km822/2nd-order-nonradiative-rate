@@ -7,15 +7,15 @@ Created on Wed Apr 17 12:34:56 2024
 """
 
 """
-Inclusive 2nd order rate formulation for IC and ISC. 
+2nd order rate formulation for IC and ISC. 
 - Molecular vibrational modes are taken as harmonic          
 - Singularity associated with propagator Green's function
   is analytically removed as presented in K. Miyazaki & N. Ananth,
-  JCP 156 044111 (2022)
+  JCP 156 044111 (2022).
 - An extensive list of correlation functions is computed for k0 (FGR), 
   k1, & k2, each consisting of varying sets of thermal vibration correlation 
-  functions (TVCFs) integrating IC & ISC involving a variable number of
-  intermediate states
+  functions (TVCFs), integrating both IC & ISC, and accomodating a variable 
+  number of intermediate states.
 """
 
 import numpy as np
