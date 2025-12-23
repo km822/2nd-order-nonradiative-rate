@@ -19,7 +19,7 @@ Convergence Check:
 Rate Calculation:
     Gaussian width = 0, ts = 6.0 & 9.0 & 12.0, tf = 3000 & 7500 & 15000 --> 3.3 x 10^4 [1/s]
 '''
-file_path = '/Users/user/Desktop/dabna-1_tpssh/rate_calculations/631g_sp_nac/'
+file_path = '/examples/' # Location of the directory containing molecular information files
 natom = 54
 adiabE = [-1284.38144131, -1284.36008219, -1284.37020249] # energies of relevant adiabatic states            
 sm = ['T', 'T', 'S'] # multiplicity symbols in the order of initial to intermediate(s) to final state (i, m1, m2, ..., f)
@@ -39,13 +39,14 @@ soc0_intmed = [[0.0, 0.648161], # SOC at equil geo [cm^-1] involving first inter
                ] # SOC at equil geo [cm^-1] involving second intermediate state 
 NM_disp_factor = 0.010 # dimensionless normal mode displacement
 disp_size = [0.01, 0.05] # dimensionless magnitude of displacements
-nlot = 6 # number of lots of 10 normal modes to include in SOC derivatives
+nlot = 6 # number of lots of 10 normal modes along which SOC derivatives are computed
 nmodes_per_lot = 10 # number of normal modes in one lot along which SOC derivatives are computed
-scale = 0.9594 # TPSSh/6-31G*
+scale = 0.9594  # Vibrational mode frequency scaling factor for TPSSh/6-31G*
 
 '''
 NAC files
 '''
+# Nonadiabatic couplings
 nac_if_file = ''
 nac_intmed_file = [['nac_t1t2_at_t2_eomccsd_631g', ''],
                    ]
@@ -54,6 +55,7 @@ nac_intmed_file = [['nac_t1t2_at_t2_eomccsd_631g', ''],
 '''
 SOC files
 '''
+# Initial to final state spin-orbit couplings
 soc_if_filename_format = 'socS1-T1_s1geo_s1mode_lot{:d}_{:.3f}.out'
 soc_if_files = ['socS1-T1_s1geo_s1mode_lot1_0.010.out', 
                 'socS1-T1_s1geo_s1mode_lot2_0.010.out',
@@ -63,6 +65,7 @@ soc_if_files = ['socS1-T1_s1geo_s1mode_lot1_0.010.out',
                 'socS1-T1_s1geo_s1mode_lot6_0.010.out',
                 ]
 
+# Spin-orbit couplings involving intermediate states
 soc_intmed_filename_format = ['socS1-T2_t2geo_s1mode_lot{:d}_{:.3f}.out']
 soc_intmed_files = [
                     [['', 'socS1-T2_t2geo_s1mode_lot1_0.010.out'],
