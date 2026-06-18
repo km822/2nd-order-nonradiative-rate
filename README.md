@@ -9,3 +9,6 @@ The inputs to the code consist of the temperature, the equilibrium geometries of
 To run the code, users are expected to first edit sys_param.py and sim_param.py. The former needs to be edited so that files containing the molecular information described in the previous paragraph are correctly pointed to. As an example, the examples folder contains the necessary files to compute the reverse intersystem crossing rate of DABNA-1 involving T1, T2, and S1 states. The latter, sim_param.py, includes simulation parameters such as the temperature, coupling cutoffs, the size of the timestep for TVCF evaluations, and the limits of TVCF integration. The calculation can then be performed by running main.py.
 
 For more details, see our publication: ... coming soon.
+
+Name conventions for geo, freq, hess
+No name convention for NAC, SOC
