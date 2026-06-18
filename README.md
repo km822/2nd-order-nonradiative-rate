@@ -11,4 +11,5 @@ To run the code, users are expected to first edit sys_param.py and sim_param.py.
 For more details, see our publication: ... coming soon.
 
 Name conventions for geo, freq, hess
+Speccify file formatting for geo, freq, hess
 No name convention for NAC, SOC
