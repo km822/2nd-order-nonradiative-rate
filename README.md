@@ -13,3 +13,5 @@ For more details, see our publication: ... coming soon.
 Name conventions for geo, freq, hess
 Speccify file formatting for geo, freq, hess
 No name convention for NAC, SOC
+Add .py for SOC displacement and analysis code
+Create a folder for hand-written derivations
