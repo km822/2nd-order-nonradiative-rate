@@ -19,7 +19,7 @@ amu_qchem
 ```
 The format of these input files must also be strictly consistent. The geometry files are in the standard .xyz format. The frequency/Hessian/atomic mass files are made of a corresponding snippet of Q-Chem output files. For a Hessian matrix, the portion of an output file beginning with the line "Eigenvectors of Proj. Mass-Weighted Hessian Matrix:" is used. Please find out the correct formats to use in the files in the 'examples' folder.
 
-Another input file, sim_param.py, includes simulation parameters such as the temperature, coupling cutoffs, the size of the timestep for TVCF evaluations, and the limits of TVCF integration. The calculation can then be performed by running main.py.
+Another input file, sim_param.py, includes simulation parameters such as the temperature, coupling cutoffs, the size of the timestep for TVCF evaluations, and the limits of TVCF integration. The calculation can then be performed by running main.py. 
 
 For more details, see our publication: ... coming soon.
 
