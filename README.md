@@ -10,7 +10,11 @@ To generate a series of geometry files for normal mode displacements, run
 ```
 python displace_normal_modes.py
 ```
-This creates a pair of XYZ files for forward and backward displacements, and bundle 10 such pairs into one ZIP file. Once SOCs at those displaced geometries are obtained, ...
+This creates a pair of XYZ files for forward and backward displacements, and bundle 10 such pairs into one ZIP file. Once SOCs at equilibrium geometries and displaced geometries are obtained, run
+```
+python find_....py
+```
+to extract respective SOCs and put them into a table form as can be found in the series of OUT files in the examples directory.
 
 To run the main program, users are expected to first edit sys_param.py and sim_param.py. The former needs to be edited so that files containing the molecular information described in the previous paragraph are correctly pointed to. As an example, the examples folder contains the necessary files to compute the reverse intersystem crossing rate of DABNA-1 involving T1, T2, and S1 states. It is important to note that the names of the frequency/Hessian/atomic mass files must follow a convention. Frequency and Hessian files must be named as
 ```
@@ -23,15 +27,19 @@ where XX is electronic state descriptor (s1, s2, t1, t2, etc.) and '...' can be 
 ```
 amu_qchem
 ```
-The format of these input files must also be strictly consistent. The geometry files are in the standard .xyz format. The frequency/Hessian/atomic mass files are made of a corresponding snippet of Q-Chem output files. For a Hessian matrix, the portion of an output file beginning with the line "Eigenvectors of Proj. Mass-Weighted Hessian Matrix:" is used. Please find out the correct formats to use in the files in the 'examples' folder.
+The format of these input files must also be strictly consistent. The geometry files are in the standard XYZ format. The frequency/Hessian/atomic mass files are made of a corresponding snippet of Q-Chem output files. For a Hessian matrix, the portion of an output file beginning with the line "Eigenvectors of Proj. Mass-Weighted Hessian Matrix:" is used. Please find out the correct formats to use in the files in the 'examples' folder.
 
 Another input file, sim_param.py, includes simulation parameters such as the temperature, coupling cutoffs, the size of the timestep for TVCF evaluations, and the limits of TVCF integration. The calculation can then be performed by running main.py
 ```
 python main.py
 ```
 
+To generate plots for the analysis of normal mode contributions, run
+```
+python analysis.py
+```
+
 For more details, see our publication: ... coming soon.
 
 
-Add .py for SOC displacement and analysis code
 Create a folder for hand-written derivations
